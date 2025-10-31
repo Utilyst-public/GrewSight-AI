@@ -4,7 +4,7 @@
 
 CrewSight-AI is a **multimodal AI-powered document processing system** that retrieves, analyzes, and synthesizes documents from public Google Drive folders. Built with CrewAI 2.x, GPT-4o-mini, and Claude 3.5 Sonnet, it automates the entire workflow from document retrieval to comprehensive report generation.
 
-## 🎯 What It Does
+##  What It Does
 
 CrewSight-AI uses four specialized AI agents working together to:
 1. **Retrieve** all documents from public Google Drive folders
@@ -12,7 +12,7 @@ CrewSight-AI uses four specialized AI agents working together to:
 3. **Synthesize** information across multiple documents
 4. **Generate** comprehensive, executive-ready reports
 
-## 🤖 Agent Architecture
+##  Agent Architecture
 
 ### Document Retriever
 - **Tool:** PublicGoogleDriveProcessor
@@ -29,7 +29,7 @@ CrewSight-AI uses four specialized AI agents working together to:
 - **Function:** Synthesizes information into cohesive reports
 - **Output:** Executive-ready markdown report
 
-## ⚙️ Technical Stack
+## Technical Stack
 
 - **Framework:** CrewAI 2.x (multi-agent orchestration)
 - **Language:** Python 3.11+
@@ -37,7 +37,7 @@ CrewSight-AI uses four specialized AI agents working together to:
 - **Tools:** Custom Google Drive processor + file handling
 - **Deployment:** Local, Docker, or CrewAI AMP
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Clone repository
@@ -57,14 +57,14 @@ cp .env.example .env
 python -m src.crewsight.main
 ```
 
-## 📊 Use Cases
+##  Use Cases
 
 - **Research & Analysis:** Process academic papers and extract insights
 - **Knowledge Management:** Build comprehensive knowledge bases
 - **Compliance:** Analyze regulatory documents and policies
 - **Market Intelligence:** Process competitive analysis documents
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 crewsight-ai/
@@ -81,28 +81,28 @@ crewsight-ai/
 └── LICENSE                 # Proprietary license
 ```
 
-## 🔒 Security & Licensing
+## Security & Licensing
 
 - **Proprietary software** owned by Utilyst Inc.
 - No rights granted without written permission
 - See **LICENSE** for full terms
 - Contact: **john@utilyst.com** for licensing
 
-## 📚 Documentation
+## Documentation
 
 - **README.md** - Quick start guide
 - **QUICKSTART.md** - 5-minute setup
 - **DEPLOYMENT.md** - Deployment options
 - **docs/ARCHITECTURE.md** - Technical details
 
-## 🎓 Requirements
+## Requirements
 
 - Python 3.11+
 - OpenAI API key
 - Anthropic API key
 - Public Google Drive folder URL
 
-## 📞 Support
+## Support
 
 For questions, issues, or licensing inquiries:
 - **Email:** john@utilyst.com
