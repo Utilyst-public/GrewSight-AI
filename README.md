@@ -6,7 +6,7 @@
 
 CrewSight-AI is a CrewAI-powered, multi-agent document processing system that retrieves, analyzes, and synthesizes documents from public Google Drive folders. Built with CrewAI 2.x, GPT-4o-mini, and Claude 3.5 Sonnet, it delivers comprehensive document analysis and reporting for research, compliance, and knowledge management workflows.
 
-## 🧭 Overview
+## Overview
 
 CrewSight-AI uses four coordinated AI agents to retrieve documents, analyze content, synthesize insights, and troubleshoot issues. It's designed for organizations that need to process large volumes of documents efficiently and extract actionable intelligence from unstructured data.
 
@@ -31,7 +31,7 @@ Safety & Troubleshooting Agent (GPT-4o-mini)
 Final Report (Markdown)
 ```
 
-## 🤖 Agent Architecture
+## Agent Architecture
 
 ### Document Retriever
 - **Tool:** PublicGoogleDriveProcessor
@@ -54,7 +54,7 @@ Final Report (Markdown)
 - **Function:** Monitors workflow, diagnoses issues, and ensures smooth operation
 - **Output:** System health reports and issue resolution documentation
 
-## ⚙️ Technical Architecture
+## Technical Architecture
 
 - **Framework:** CrewAI 2.x (multi-agent orchestration)
 - **Deployment:** CrewAI AMP, Docker, or local
@@ -64,7 +64,7 @@ Final Report (Markdown)
 - **Integration:** REST endpoints, CLI interface
 - **Operation:** Works in cloud or on-premise environments
 
-## 🚀 Installation
+## Installation
 
 ### Prerequisites
 
@@ -101,7 +101,7 @@ OPENAI_API_KEY=your-openai-key
 ANTHROPIC_API_KEY=your-anthropic-key
 ```
 
-## 🧪 Usage
+## Usage
 
 ### Local Test
 
@@ -150,7 +150,7 @@ crewai deploy create
 Configuration is automatically read from `pyproject.toml`.  
 The first build takes ~10–15 minutes. Subsequent pushes are near-instant.
 
-## 🧱 Project Structure
+## Project Structure
 
 ```
 crewsight-ai/
@@ -176,7 +176,7 @@ crewsight-ai/
 └── PROJECT_OVERVIEW.md        # Detailed overview
 ```
 
-## 🧰 Use Cases
+## Use Cases
 
 ### Research & Analysis
 - Academic paper analysis and synthesis
@@ -196,7 +196,7 @@ crewsight-ai/
 - Information extraction and indexing
 - Cross-document relationship mapping
 
-## 📊 Performance & Benefits
+## Performance & Benefits
 
 | Metric | Improvement |
 |--------|-------------|
@@ -213,7 +213,7 @@ crewsight-ai/
 - Reduced manual research time
 - Consistent analysis quality
 
-## 🏗️ Technical Summary
+## Technical Summary
 
 | Component | Details |
 |-----------|---------|
@@ -225,14 +225,14 @@ crewsight-ai/
 | Deployment | GitHub → CrewAI AMP via OAuth |
 | Scalability | Process 100+ documents concurrently |
 
-## 🔒 Security & Privacy
+## Security & Privacy
 
 - **Local Processing:** All document processing can run locally
 - **API Key Security:** Environment variable isolation
 - **Data Privacy:** No persistent storage of processed documents
 - **Access Control:** Public folder access only (no authentication required)
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Run all tests
@@ -245,7 +245,7 @@ pytest --cov=src
 pytest tests/test_crew.py -v
 ```
 
-## 🛠️ Development
+## Development
 
 ### Adding New Agents
 
@@ -259,7 +259,7 @@ Create new tool in `src/crewsight/tools/` and add to agents.
 
 Modify YAML files in `src/crewsight/config/` for behavior changes.
 
-## 📚 Documentation
+## Documentation
 
 - **README.md** (this file) - Quick start and overview
 - **PROJECT_OVERVIEW.md** - Detailed project information
@@ -268,7 +268,7 @@ Modify YAML files in `src/crewsight/config/` for behavior changes.
 - **docs/ARCHITECTURE.md** - System architecture details
 - **CONTRIBUTING.md** - Contribution guidelines
 
-## 🧾 Ownership & Licensing
+## Ownership & Licensing
 
 **All intellectual property in this repository** — including code, design, documentation, and workflows — **is owned exclusively by Utilyst Inc.**
 
@@ -280,7 +280,7 @@ See **LICENSE** and **NOTICE** for full details.
 
 For licensing inquiries, contact: **john@utilyst.com**
 
-## 📞 Support
+## Support
 
 For issues, questions, or licensing inquiries:
 - **Email:** john@utilyst.com
