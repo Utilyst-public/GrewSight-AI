@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      background: #F5F5F5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    .phone {
+      width: 375px;
+      height: 812px;
+      background: white;
+      border-radius: 40px;
+      box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .status-bar {
+      height: 44px;
+      background: #095C53;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      color: white;
+      font-size: 14px;
+    }
+    
+    .header {
+      background: #095C53;
+      padding: 20px 20px 30px 20px;
+      color: white;
+    }
+    
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .logo {
+      width: 120px;
+    }
+    
+    .profile-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+    
+    .greeting {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    
+    .subtitle {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    
+    .content {
+      padding: 20px;
+      background: #F8F9FA;
+      min-height: 638px;
+    }
+    
+    .quick-actions {
+      margin-bottom: 30px;
+    }
+    
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    
+    .action-button {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    
+    .action-button:active {
+      transform: scale(0.98);
+    }
+    
+    .action-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #FEC951, #FFD97A);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+    
+    .action-text h3 {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 4px;
+    }
+    
+    .action-text p {
+      font-size: 13px;
+      color: #666;
+    }
+    
+    .recent-sessions {
+      margin-bottom: 20px;
+    }
+    
+    .session-card {
+      background: white;
+      padding: 16px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      border-left: 4px solid #2BB6C1;
+    }
+    
+    .session-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    
+    .session-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+    }
+    
+    .session-time {
+      font-size: 12px;
+      color: #999;
+    }
+    
+    .session-description {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 8px;
+    }
+    
+    .session-status {
+      display: inline-block;
+      padding: 4px 10px;
+      background: #E8F5E9;
+      color: #2E7D32;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    
+    .bottom-nav {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 70px;
+      background: white;
+      border-top: 1px solid #E0E0E0;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0 20px;
+    }
+    
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      color: #999;
+      font-size: 11px;
+    }
+    
+    .nav-item.active {
+      color: #095C53;
+    }
+    
+    .nav-icon {
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="phone">
+    <div class="status-bar">
+      <span>9:41</span>
+      <span>●●●●●</span>
+    </div>
+    
+    <div class="header">
+      <div class="header-top">
+        <img src="/mnt/user-data/uploads/Final_Logo.png" alt="Utilyst" class="logo">
+        <div class="profile-icon">👤</div>
+      </div>
+      <div class="greeting">Good Morning, John</div>
+      <div class="subtitle">Ready to solve some issues?</div>
+    </div>
+    
+    <div class="content">
+      <div class="quick-actions">
+        <div class="section-title">Quick Actions</div>
+        
+        <div class="action-button">
+          <div class="action-icon">💬</div>
+          <div class="action-text">
+            <h3>Start New Issue</h3>
+            <p>Describe your equipment problem</p>
+          </div>
+        </div>
+        
+        <div class="action-button">
+          <div class="action-icon">📷</div>
+          <div class="action-text">
+            <h3>Scan Equipment</h3>
+            <p>Take a photo for quick diagnosis</p>
+          </div>
+        </div>
+        
+        <div class="action-button">
+          <div class="action-icon">🔍</div>
+          <div class="action-text">
+            <h3>Browse Manuals</h3>
+            <p>Search technical documentation</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="recent-sessions">
+        <div class="section-title">Recent Sessions</div>
+        
+        <div class="session-card">
+          <div class="session-header">
+            <div class="session-title">Pump Station #3</div>
+            <div class="session-time">2 hours ago</div>
+          </div>
+          <div class="session-description">Error E-2047 - Modbus communication fault</div>
+          <span class="session-status">Resolved</span>
+        </div>
+        
+        <div class="session-card">
+          <div class="session-header">
+            <div class="session-title">PLC Controller</div>
+            <div class="session-time">Yesterday</div>
+          </div>
+          <div class="session-description">Installation guidance request</div>
+          <span class="session-status">Resolved</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bottom-nav">
+      <div class="nav-item active">
+        <div class="nav-icon">🏠</div>
+        <div>Home</div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-icon">📋</div>
+        <div>History</div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-icon">📚</div>
+        <div>Manuals</div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-icon">⚙️</div>
+        <div>Settings</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

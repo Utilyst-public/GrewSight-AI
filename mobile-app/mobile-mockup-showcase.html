@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utilyst Mobile App - UI Mockup</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
+      padding: 40px 20px;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .logo {
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+    
+    .header h1 {
+      font-size: 36px;
+      color: #095C53;
+      margin-bottom: 10px;
+    }
+    
+    .header p {
+      font-size: 18px;
+      color: #666;
+    }
+    
+    .screens-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .screen-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+    
+    .screen-card {
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    
+    .screen-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #095C53;
+      margin-bottom: 8px;
+    }
+    
+    .screen-description {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    
+    .screen-preview {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #E0E0E0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    
+    .screen-preview iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      transform-origin: top left;
+    }
+    
+    .features-section {
+      max-width: 1200px;
+      margin: 60px auto;
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    
+    .features-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #095C53;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+    
+    .feature-item {
+      padding: 20px;
+      background: #F8F9FA;
+      border-radius: 12px;
+      border-left: 4px solid #2BB6C1;
+    }
+    
+    .feature-icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    
+    .feature-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 8px;
+    }
+    
+    .feature-desc {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.5;
+    }
+    
+    .color-palette {
+      max-width: 1200px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    
+    .palette-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #095C53;
+      margin-bottom: 25px;
+    }
+    
+    .colors {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+    }
+    
+    .color-swatch {
+      text-align: center;
+    }
+    
+    .color-box {
+      height: 100px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+    
+    .color-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 4px;
+    }
+    
+    .color-hex {
+      font-size: 13px;
+      color: #666;
+      font-family: 'Courier New', monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="/mnt/user-data/uploads/Final_Logo.png" alt="Utilyst" class="logo">
+    <h1>Mobile App UI Mockup</h1>
+    <p>Complete User Journey from Login to Resolution</p>
+  </div>
+  
+  <div class="screens-container">
+    <div class="screen-row">
+      <div class="screen-card">
+        <h2 class="screen-title">1. Login Screen</h2>
+        <p class="screen-description">Secure authentication with employee ID, password, or SSO integration for quick access.</p>
+        <div class="screen-preview">
+          <iframe src="mobile-01-login.html"></iframe>
+        </div>
+      </div>
+      
+      <div class="screen-card">
+        <h2 class="screen-title">2. Home Dashboard</h2>
+        <p class="screen-description">Quick actions, recent sessions, and personalized greeting to get technicians started quickly.</p>
+        <div class="screen-preview">
+          <iframe src="mobile-02-home.html"></iframe>
+        </div>
+      </div>
+    </div>
+    
+    <div class="screen-row">
+      <div class="screen-card">
+        <h2 class="screen-title">3. New Issue Input</h2>
+        <p class="screen-description">Select equipment type, describe the issue, and attach photos or voice notes for comprehensive context.</p>
+        <div class="screen-preview">
+          <iframe src="mobile-03-new-issue.html"></iframe>
+        </div>
+      </div>
+      
+      <div class="screen-card">
+        <h2 class="screen-title">4. AI Chat Interface</h2>
+        <p class="screen-description">Real-time conversation with AI assistant providing step-by-step troubleshooting guidance.</p>
+        <div class="screen-preview">
+          <iframe src="mobile-04-chat.html"></iframe>
+        </div>
+      </div>
+    </div>
+    
+    <div class="screen-row">
+      <div class="screen-card">
+        <h2 class="screen-title">5. Camera Capture</h2>
+        <p class="screen-description">Intuitive camera interface for capturing equipment photos and error displays with helpful tips.</p>
+        <div class="screen-preview">
+          <iframe src="mobile-05-camera.html"></iframe>
+        </div>
+      </div>
+      
+      <div class="screen-card">
+        <h2 class="screen-title">6. Issue Resolved</h2>
+        <p class="screen-description">Success confirmation with session summary, report generation, and feedback collection.</p>
+        <div class="screen-preview">
+          <iframe src="mobile-06-resolved.html"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="features-section">
+    <h2 class="features-title">Key Features</h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon">🎯</div>
+        <div class="feature-name">Intuitive Navigation</div>
+        <div class="feature-desc">Clean, simple interface designed for field technicians working in challenging conditions</div>
+      </div>
+      
+      <div class="feature-item">
+        <div class="feature-icon">💬</div>
+        <div class="feature-name">Smart AI Chat</div>
+        <div class="feature-desc">Conversational interface with step-by-step guidance and context-aware responses</div>
+      </div>
+      
+      <div class="feature-item">
+        <div class="feature-icon">📸</div>
+        <div class="feature-name">Visual Diagnostics</div>
+        <div class="feature-desc">Integrated camera for capturing equipment photos and error screens for analysis</div>
+      </div>
+      
+      <div class="feature-item">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-name">Quick Actions</div>
+        <div class="feature-desc">One-tap access to common tasks and recent troubleshooting sessions</div>
+      </div>
+      
+      <div class="feature-item">
+        <div class="feature-icon">📋</div>
+        <div class="feature-name">Session History</div>
+        <div class="feature-desc">Track all troubleshooting sessions with detailed reports and resolutions</div>
+      </div>
+      
+      <div class="feature-item">
+        <div class="feature-icon">🔒</div>
+        <div class="feature-name">Enterprise Security</div>
+        <div class="feature-desc">Secure authentication with SSO support and encrypted data transmission</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="color-palette">
+    <h2 class="palette-title">Brand Color Palette</h2>
+    <div class="colors">
+      <div class="color-swatch">
+        <div class="color-box" style="background: #095C53;"></div>
+        <div class="color-name">Primary</div>
+        <div class="color-hex">#095C53</div>
+        <div class="color-hex">Dark Emerald Green</div>
+      </div>
+      
+      <div class="color-swatch">
+        <div class="color-box" style="background: #FEC951;"></div>
+        <div class="color-name">Secondary</div>
+        <div class="color-hex">#FEC951</div>
+        <div class="color-hex">Golden Yellow</div>
+      </div>
+      
+      <div class="color-swatch">
+        <div class="color-box" style="background: #2BB6C1;"></div>
+        <div class="color-name">Tertiary</div>
+        <div class="color-hex">#2BB6C1</div>
+        <div class="color-hex">Teal Blue / Cyan</div>
+      </div>
+      
+      <div class="color-swatch">
+        <div class="color-box" style="background: #666666;"></div>
+        <div class="color-name">Neutral Gray</div>
+        <div class="color-hex">#666666</div>
+        <div class="color-hex">Medium Gray</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

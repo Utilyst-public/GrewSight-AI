@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      background: #F5F5F5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    .phone {
+      width: 375px;
+      height: 812px;
+      background: white;
+      border-radius: 40px;
+      box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .status-bar {
+      height: 44px;
+      background: #095C53;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      color: white;
+      font-size: 14px;
+    }
+    
+    .top-bar {
+      height: 60px;
+      background: white;
+      border-bottom: 1px solid #E0E0E0;
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+      gap: 15px;
+    }
+    
+    .back-button {
+      font-size: 24px;
+      color: #095C53;
+      cursor: pointer;
+    }
+    
+    .top-bar-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #333;
+    }
+    
+    .content {
+      padding: 20px;
+      height: 638px;
+      overflow-y: auto;
+      background: #F8F9FA;
+    }
+    
+    .section {
+      margin-bottom: 25px;
+    }
+    
+    .section-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #095C53;
+      margin-bottom: 10px;
+      display: block;
+    }
+    
+    .equipment-selector {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .equipment-card {
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+      border: 2px solid #E0E0E0;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .equipment-card.selected {
+      border-color: #2BB6C1;
+      background: #F0F9FA;
+    }
+    
+    .equipment-icon {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+    
+    .equipment-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: #333;
+    }
+    
+    .text-input {
+      background: white;
+      border-radius: 12px;
+      padding: 15px;
+      border: 2px solid #E0E0E0;
+      font-size: 15px;
+      width: 100%;
+      min-height: 120px;
+      font-family: inherit;
+      resize: none;
+    }
+    
+    .text-input:focus {
+      outline: none;
+      border-color: #2BB6C1;
+    }
+    
+    .text-input::placeholder {
+      color: #999;
+    }
+    
+    .media-options {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .media-button {
+      flex: 1;
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      border: 2px dashed #E0E0E0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .media-button:active {
+      transform: scale(0.98);
+    }
+    
+    .media-icon {
+      font-size: 28px;
+    }
+    
+    .media-text {
+      font-size: 13px;
+      font-weight: 600;
+      color: #666;
+    }
+    
+    .suggestions {
+      background: white;
+      border-radius: 12px;
+      padding: 15px;
+    }
+    
+    .suggestion-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    
+    .suggestion-chip {
+      display: inline-block;
+      padding: 8px 14px;
+      background: #F0F9FA;
+      color: #2BB6C1;
+      border-radius: 20px;
+      font-size: 13px;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      border: 1px solid #2BB6C1;
+    }
+    
+    .bottom-action {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 15px 20px 30px 20px;
+      background: white;
+      border-top: 1px solid #E0E0E0;
+    }
+    
+    .submit-button {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #FEC951, #FFD97A);
+      color: #095C53;
+      border: none;
+      border-radius: 12px;
+      font-size: 17px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: transform 0.2s;
+    }
+    
+    .submit-button:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+<body>
+  <div class="phone">
+    <div class="status-bar">
+      <span>9:41</span>
+      <span>●●●●●</span>
+    </div>
+    
+    <div class="top-bar">
+      <div class="back-button">←</div>
+      <div class="top-bar-title">New Issue</div>
+    </div>
+    
+    <div class="content">
+      <div class="section">
+        <label class="section-label">Equipment Type</label>
+        <div class="equipment-selector">
+          <div class="equipment-card selected">
+            <div class="equipment-icon">⚙️</div>
+            <div class="equipment-name">Pump Station</div>
+          </div>
+          <div class="equipment-card">
+            <div class="equipment-icon">🔌</div>
+            <div class="equipment-name">PLC</div>
+          </div>
+          <div class="equipment-card">
+            <div class="equipment-icon">💡</div>
+            <div class="equipment-name">Controller</div>
+          </div>
+          <div class="equipment-card">
+            <div class="equipment-icon">📡</div>
+            <div class="equipment-name">Sensor</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="section">
+        <label class="section-label">Describe the Issue</label>
+        <textarea class="text-input" placeholder="What's happening? Any error codes or symptoms you've noticed?">Error E-2047 showing on display. Pump station not responding to commands.</textarea>
+      </div>
+      
+      <div class="section">
+        <label class="section-label">Add Photos or Voice</label>
+        <div class="media-options">
+          <div class="media-button">
+            <div class="media-icon">📷</div>
+            <div class="media-text">Camera</div>
+          </div>
+          <div class="media-button">
+            <div class="media-icon">🖼️</div>
+            <div class="media-text">Gallery</div>
+          </div>
+          <div class="media-button">
+            <div class="media-icon">🎤</div>
+            <div class="media-text">Voice</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="suggestions">
+        <div class="suggestion-title">Common Issues</div>
+        <span class="suggestion-chip">Communication Error</span>
+        <span class="suggestion-chip">Power Issue</span>
+        <span class="suggestion-chip">Wiring Problem</span>
+        <span class="suggestion-chip">Sensor Fault</span>
+      </div>
+    </div>
+    
+    <div class="bottom-action">
+      <button class="submit-button">
+        <span>Get Help</span>
+        <span>→</span>
+      </button>
+    </div>
+  </div>
+</body>
+</html>

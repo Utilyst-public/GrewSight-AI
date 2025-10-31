@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      background: #F5F5F5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    .phone {
+      width: 375px;
+      height: 812px;
+      background: white;
+      border-radius: 40px;
+      box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .status-bar {
+      height: 44px;
+      background: rgba(0,0,0,0.3);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      color: white;
+      font-size: 14px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+    }
+    
+    .camera-view {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .camera-placeholder {
+      width: 80%;
+      height: 60%;
+      border: 3px dashed rgba(255,255,255,0.4);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    
+    .camera-icon {
+      font-size: 64px;
+      margin-bottom: 15px;
+      opacity: 0.7;
+    }
+    
+    .camera-text {
+      font-size: 16px;
+      opacity: 0.8;
+      text-align: center;
+      padding: 0 30px;
+    }
+    
+    .focus-frame {
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      border: 2px solid #FEC951;
+      border-radius: 12px;
+    }
+    
+    .corner {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 3px solid #FEC951;
+    }
+    
+    .corner.top-left {
+      top: -2px;
+      left: -2px;
+      border-right: none;
+      border-bottom: none;
+    }
+    
+    .corner.top-right {
+      top: -2px;
+      right: -2px;
+      border-left: none;
+      border-bottom: none;
+    }
+    
+    .corner.bottom-left {
+      bottom: -2px;
+      left: -2px;
+      border-right: none;
+      border-top: none;
+    }
+    
+    .corner.bottom-right {
+      bottom: -2px;
+      right: -2px;
+      border-left: none;
+      border-top: none;
+    }
+    
+    .top-controls {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      z-index: 5;
+    }
+    
+    .control-button {
+      width: 44px;
+      height: 44px;
+      background: rgba(0,0,0,0.5);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+    }
+    
+    .bottom-controls {
+      position: absolute;
+      bottom: 30px;
+      left: 0;
+      right: 0;
+      padding: 0 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 5;
+    }
+    
+    .gallery-button {
+      width: 50px;
+      height: 50px;
+      background: rgba(255,255,255,0.3);
+      border: 3px solid white;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+    
+    .capture-button {
+      width: 70px;
+      height: 70px;
+      background: white;
+      border: 5px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      cursor: pointer;
+      position: relative;
+    }
+    
+    .capture-button::after {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      bottom: 5px;
+      background: white;
+      border-radius: 50%;
+    }
+    
+    .flip-button {
+      width: 50px;
+      height: 50px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 24px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .hint-banner {
+      position: absolute;
+      bottom: 120px;
+      left: 20px;
+      right: 20px;
+      background: rgba(254, 201, 81, 0.95);
+      padding: 15px 20px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .hint-icon {
+      font-size: 24px;
+    }
+    
+    .hint-text {
+      flex: 1;
+      color: #095C53;
+    }
+    
+    .hint-title {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    
+    .hint-description {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="phone">
+    <div class="status-bar">
+      <span>9:41</span>
+      <span>●●●●●</span>
+    </div>
+    
+    <div class="camera-view">
+      <div class="camera-placeholder">
+        <div class="camera-icon">📷</div>
+        <div class="camera-text">Point camera at equipment or error display</div>
+      </div>
+      
+      <div class="focus-frame">
+        <div class="corner top-left"></div>
+        <div class="corner top-right"></div>
+        <div class="corner bottom-left"></div>
+        <div class="corner bottom-right"></div>
+      </div>
+    </div>
+    
+    <div class="top-controls">
+      <div class="control-button">✕</div>
+      <div class="control-button">⚡</div>
+    </div>
+    
+    <div class="hint-banner">
+      <div class="hint-icon">💡</div>
+      <div class="hint-text">
+        <div class="hint-title">Quick Tip</div>
+        <div class="hint-description">Take clear photos of error screens and equipment labels</div>
+      </div>
+    </div>
+    
+    <div class="bottom-controls">
+      <div class="gallery-button">🖼️</div>
+      <div class="capture-button"></div>
+      <div class="flip-button">🔄</div>
+    </div>
+  </div>
+</body>
+</html>

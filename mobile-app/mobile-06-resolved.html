@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      background: #F5F5F5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    .phone {
+      width: 375px;
+      height: 812px;
+      background: white;
+      border-radius: 40px;
+      box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .status-bar {
+      height: 44px;
+      background: #095C53;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      color: white;
+      font-size: 14px;
+    }
+    
+    .content {
+      height: 768px;
+      background: linear-gradient(180deg, #F8F9FA 0%, #FFFFFF 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 30px;
+    }
+    
+    .success-animation {
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, #2BB6C1, #3DD4C5);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 64px;
+      margin: 30px 0;
+      box-shadow: 0 10px 30px rgba(43, 182, 193, 0.3);
+    }
+    
+    .success-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #095C53;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    
+    .success-message {
+      font-size: 16px;
+      color: #666;
+      text-align: center;
+      line-height: 1.5;
+      margin-bottom: 35px;
+    }
+    
+    .summary-card {
+      width: 100%;
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      margin-bottom: 25px;
+    }
+    
+    .summary-header {
+      font-size: 16px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #F0F0F0;
+    }
+    
+    .summary-row:last-child {
+      border-bottom: none;
+    }
+    
+    .summary-label {
+      font-size: 14px;
+      color: #666;
+    }
+    
+    .summary-value {
+      font-size: 14px;
+      color: #333;
+      font-weight: 600;
+      text-align: right;
+    }
+    
+    .action-buttons {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .primary-button {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #FEC951, #FFD97A);
+      color: #095C53;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    
+    .secondary-button {
+      width: 100%;
+      padding: 16px;
+      background: white;
+      color: #095C53;
+      border: 2px solid #095C53;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    
+    .rating-section {
+      width: 100%;
+      background: #F8F9FA;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .rating-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    
+    .stars {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      font-size: 32px;
+    }
+    
+    .star {
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    
+    .star:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="phone">
+    <div class="status-bar">
+      <span>9:41</span>
+      <span>●●●●●</span>
+    </div>
+    
+    <div class="content">
+      <div class="success-animation">✓</div>
+      
+      <h1 class="success-title">Issue Resolved!</h1>
+      <p class="success-message">Your pump station is now communicating properly. The termination resistor has been installed correctly.</p>
+      
+      <div class="summary-card">
+        <div class="summary-header">
+          <span>📋</span>
+          <span>Session Summary</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Issue Type</span>
+          <span class="summary-value">Communication Error</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Equipment</span>
+          <span class="summary-value">Pump Station #3</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Error Code</span>
+          <span class="summary-value">E-2047</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Resolution Time</span>
+          <span class="summary-value">12 minutes</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Steps Completed</span>
+          <span class="summary-value">3 of 3</span>
+        </div>
+      </div>
+      
+      <div class="action-buttons">
+        <button class="primary-button">
+          <span>📄</span>
+          <span>View Full Report</span>
+        </button>
+        <button class="secondary-button">
+          <span>🏠</span>
+          <span>Back to Home</span>
+        </button>
+      </div>
+      
+      <div class="rating-section">
+        <div class="rating-title">How helpful was this session?</div>
+        <div class="stars">
+          <span class="star">⭐</span>
+          <span class="star">⭐</span>
+          <span class="star">⭐</span>
+          <span class="star">⭐</span>
+          <span class="star">⭐</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
