@@ -1,0 +1,94 @@
+retrieve_documents:
+  description: >
+    Access the public Google Drive folder at {google_drive_url} and retrieve all
+    available documents. Create a comprehensive catalog of all files including:
+    - File names and types
+    - File sizes
+    - Last modified dates
+    - Download status
+    - Any access issues or errors
+    
+    Ensure all files are successfully downloaded and stored in an organized manner.
+    Handle different file formats appropriately (PDF, DOCX, XLSX, PPTX, TXT, etc.).
+  expected_output: >
+    A detailed report containing:
+    1. Total number of files found
+    2. List of all successfully retrieved files with metadata
+    3. Any files that couldn't be accessed with error details
+    4. Summary statistics (total size, file type distribution)
+    5. Organized file structure or directory tree
+  agent: vision_analyzer
+
+analyze_documents:
+  description: >
+    Perform comprehensive analysis on all retrieved documents focusing on {analysis_focus}.
+    For each document of type {document_type}, extract and analyze:
+    
+    1. **Content Analysis:**
+       - Main topics and themes
+       - Key findings or conclusions
+       - Important data points and statistics
+    
+    2. **Structure Analysis:**
+       - Document organization and sections
+       - Tables, figures, and visual elements
+       - References and citations
+    
+    3. **Relationship Mapping:**
+       - Cross-references between documents
+       - Common themes or patterns
+       - Connections and dependencies
+  expected_output: >
+    A comprehensive analysis report in {output_format} format containing:
+    
+    1. Executive Summary
+    2. Individual Document Analyses with key insights
+    3. Cross-Document Analysis with themes and patterns
+    4. Data Extraction tables and statistics
+    5. Recommendations for further review
+  agent: instruction_generator
+  context:
+    - retrieve_documents
+
+synthesize_content:
+  description: >
+    Synthesize all document analyses into a comprehensive, cohesive final report.
+    Create a polished deliverable that:
+    
+    1. **Integrates Information:**
+       - Combine insights from all analyzed documents
+       - Create a unified narrative
+       - Eliminate redundancy while preserving important details
+    
+    2. **Provides Context:**
+       - Explain relationships between different information
+       - Highlight trends, patterns, and developments
+       - Include relevant timeframes and sequences
+    
+    3. **Delivers Insights:**
+       - Draw meaningful conclusions
+       - Identify implications and impacts
+       - Provide evidence-based recommendations
+  expected_output: >
+    A polished final report (saved to output/final_report.md) containing:
+    
+    # Executive Summary
+    - Key findings (3-5 bullets)
+    - Critical insights and recommendations
+    
+    # Detailed Findings
+    - Major themes with supporting evidence
+    - Cross-cutting insights
+    - Data summaries
+    
+    # Recommendations
+    - Immediate actions
+    - Short-term and long-term considerations
+    
+    # Appendices
+    - Document index with sources
+    - Detailed data tables
+  agent: safety_advisor
+  context:
+    - retrieve_documents
+    - analyze_documents
